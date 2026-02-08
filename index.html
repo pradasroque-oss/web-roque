@@ -3,93 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roque | Systems Architect for Info-brands</title>
+    <title>ROQUE | Operaciones & Estrategia 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; }
-        .vsl-shadow { box-shadow: 0 0 50px rgba(255,255,255,0.1); }
-        .text-huge { font-size: clamp(2.5rem, 8vw, 6rem); line-height: 0.9; }
-        .logo-grid svg { height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; fill: white; }
-        .logo-grid svg:hover { opacity: 1; }
-        iframe { border-radius: 1.5rem; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Animación Marquee para Logos Premium */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-content {
+            display: flex;
+            width: fit-content;
+            animation: scroll 30s linear infinite;
+        }
+        .marquee-content:hover { animation-play-state: paused; }
+
+        /* Contenedor de Video 2026 */
+        .video-glow {
+            position: relative;
+            background: linear-gradient(180deg, #111 0%, #000 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 80px -20px rgba(255,255,255,0.05);
+        }
+
+        /* Secciones de Contraste */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
 
-    <!-- Navegación -->
-    <nav class="p-6 md:p-10 flex justify-between items-center fixed w-full z-50 mix-blend-difference">
-        <div class="text-2xl font-black tracking-tighter uppercase italic">ROQUE.</div>
-        <a href="#agenda" class="bg-white text-black text-xs font-black px-6 py-3 rounded-full uppercase tracking-widest hover:scale-105 transition">Agendar ahora</a>
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-[100] p-6 md:p-10 flex justify-between items-center mix-blend-difference">
+        <div class="text-2xl font-black tracking-tighter uppercase">ROQUE<span class="text-zinc-600">.</span></div>
+        <div class="flex items-center gap-6">
+            <span class="hidden md:block text-[10px] tracking-[0.3em] text-zinc-500 uppercase font-bold">Systems Audit 2026</span>
+            <a href="#agenda" class="bg-white text-black text-[10px] font-black px-8 py-3 rounded-full uppercase tracking-widest hover:invert transition-all">Agendar Consultoría</a>
+        </div>
     </nav>
 
     <!-- HERO VSL SECTION -->
-    <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 text-center">
-        <h1 class="text-huge font-black tracking-tighter uppercase mb-6">
-            SISTEMAS QUE <br> <span class="text-zinc-700 italic">ESCALAN MARCAS.</span>
-        </h1>
-        <p class="text-zinc-500 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
-            Sustituimos el agobio operativo por infraestructuras de alto rendimiento para Infoproductores.
-        </p>
-
-        <!-- CTA PRIMARIO -->
-        <div class="mb-16">
-            <a href="#agenda" class="bg-white text-black px-12 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-zinc-200 transition transform hover:scale-110 inline-block shadow-xl shadow-white/10">
-                Diseñar mi arquitectura operativa
+    <section class="min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6">
+        <div class="text-center max-w-5xl mb-16">
+            <h1 class="text-6xl md:text-[140px] font-black leading-[0.8] tracking-tighter uppercase mb-10">
+                SISTEMAS <br> <span class="text-zinc-800 serif italic font-light lowercase">que escalan.</span>
+            </h1>
+            <p class="text-zinc-500 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
+                Construimos la infraestructura operativa para Infoproductores de Élite. <br>
+                <span class="text-white font-bold">2026: Sustituimos el caos por eficiencia absoluta.</span>
+            </p>
+            <a href="#agenda" class="bg-white text-black px-12 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:scale-110 transition shadow-2xl shadow-white/20">
+                QUIERO MI AUDITORÍA DE SISTEMAS
             </a>
         </div>
 
-        <!-- VIDEO VSL (CORREGIDO) -->
-        <div class="w-full max-w-5xl mx-auto vsl-shadow rounded-[2rem] p-1 bg-zinc-800/50">
-            <div class="aspect-video w-full rounded-[1.5rem] overflow-hidden bg-black">
-                <!-- He puesto el ID de tu video de Youtube exacto -->
-                <iframe class="w-full h-full" src="https://www.youtube.com/embed/9S_9AInm46U?rel=0&modestbranding=1" title="VSL Roque" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- VSL VIDEO CASE -->
+        <div class="w-full max-w-6xl mx-auto video-glow rounded-[3rem] p-2">
+            <div class="aspect-video w-full rounded-[2.5rem] overflow-hidden bg-black shadow-inner">
+                <iframe 
+                    class="w-full h-full" 
+                    src="https://www.youtube.com/embed/9S_9AInm46U?autoplay=1&mute=1&rel=0&showinfo=0&modestbranding=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
 
-    <!-- LOGOS DE CONFIANZA (SVG GRANDES Y RECONOCIBLES) -->
-    <section class="py-24 bg-zinc-950/50 border-y border-white/5">
-        <div class="max-w-6xl mx-auto px-6">
-            <p class="text-center text-[10px] uppercase tracking-[0.5em] text-zinc-600 mb-12 font-bold font-serif italic text-sm">Tu negocio sobre herramientas de élite</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 grayscale opacity-50">
-                <div class="flex flex-col items-center gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" class="h-10 w-auto invert" alt="Notion">
-                    <span class="text-[10px] font-bold tracking-widest">NOTION</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <img src="https://www.make.com/en/static/images/logos/make-logo.svg" class="h-8 w-auto invert" alt="Make">
-                    <span class="text-[10px] font-bold tracking-widest uppercase">Make</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <span class="text-2xl font-black tracking-tighter">GHL</span>
-                    <span class="text-[10px] font-bold tracking-widest">CRM</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Airtable_Logo.svg" class="h-8 w-auto invert" alt="Airtable">
-                    <span class="text-[10px] font-bold tracking-widest uppercase">Airtable</span>
-                </div>
-            </div>
+    <!-- MARQUEE LOGOS (PREMIUM & GRANDES) -->
+    <section class="py-20 bg-zinc-950/30 overflow-hidden border-y border-white/5">
+        <div class="marquee-content gap-20 md:gap-40 items-center">
+            <!-- Bloque 1 -->
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">MAKE</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter italic serif">Notion</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">GHL</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">AIRTABLE</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">ZAPIER</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">WHATSAPP API</span>
+            <!-- Bloque 2 (para el loop infinito) -->
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">MAKE</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter italic serif">Notion</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">GHL</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">AIRTABLE</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">ZAPIER</span>
+            <span class="text-4xl md:text-6xl font-black opacity-20 hover:opacity-100 transition tracking-tighter">WHATSAPP API</span>
         </div>
     </section>
 
-    <!-- BENEFICIOS DE NEGOCIO -->
+    <!-- SECTION: LO QUE OCURRE EN LA LLAMADA -->
     <section class="py-32 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="border-t border-zinc-800 pt-8">
-                <span class="text-zinc-600 font-bold text-xs uppercase tracking-widest">01. Métricas</span>
-                <h3 class="text-3xl font-black mt-4 mb-4 uppercase">Control total</h3>
-                <p class="text-zinc-500 leading-relaxed">Dashboards en tiempo real. Sabrás tu CAC, ROAS y LTV al segundo. Deja de adivinar.</p>
-            </div>
-            <div class="border-t border-zinc-800 pt-8">
-                <span class="text-zinc-600 font-bold text-xs uppercase tracking-widest">02. Tiempo</span>
-                <h3 class="text-3xl font-black mt-4 mb-4 uppercase">Libertad Real</h3>
-                <p class="text-zinc-500 leading-relaxed">Liberamos +15h semanales de tareas manuales. Tu equipo trabaja para el sistema, no tú para ellos.</p>
-            </div>
-            <div class="border-t border-zinc-800 pt-8">
-                <span class="text-zinc-600 font-bold text-xs uppercase tracking-widest">03. Escalado</span>
-                <h3 class="text-3xl font-black mt-4 mb-4 uppercase">Delegación</h3>
-                <p class="text-zinc-500 leading-relaxed">Sistemas que permiten contratar y formar sin fricción. Tu negocio se vuelve una máquina vendible.</p>
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 leading-[0.85]">
+                        La sesión de <br> <span class="text-zinc-700 italic serif font-light">Ingeniería.</span>
+                    </h2>
+                    <p class="text-zinc-500 text-lg leading-relaxed mb-10">
+                        No es una llamada de ventas. Es una consultoría estratégica 1a1 donde auditamos el corazón operativo de tu marca.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <span class="text-zinc-700 font-black">01.</span>
+                            <p><b>Diagnóstico de Fricción:</b> Localizamos dónde estás perdiendo tiempo y dinero hoy.</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="text-zinc-700 font-black">02.</span>
+                            <p><b>Mapa de Arquitectura:</b> Diseñamos el flujo ideal de herramientas para tu escalado.</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="text-zinc-700 font-black">03.</span>
+                            <p><b>Plan de Acción 2026:</b> Recibes la hoja de ruta técnica para delegar y medir con precisión.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="glass-card p-10 rounded-3xl">
+                        <h4 class="text-xl font-bold mb-4 uppercase">Control de Métricas</h4>
+                        <p class="text-zinc-500 text-sm">Visualiza tu ROI, CAC y LTV en tiempo real. Deja de gestionar a ciegas.</p>
+                    </div>
+                    <div class="glass-card p-10 rounded-3xl">
+                        <h4 class="text-xl font-bold mb-4 uppercase">Delegación Absoluta</h4>
+                        <p class="text-zinc-500 text-sm">Sistemas que permiten que tu equipo trabaje solo, sin que tú seas el cuello de botella.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -97,26 +141,30 @@
     <!-- TESTIMONIOS -->
     <section class="py-32 bg-white text-black px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-huge font-black tracking-tighter uppercase italic mb-20 text-center">Resultados.</h2>
+            <h2 class="text-huge font-black tracking-tighter uppercase italic mb-24 text-center text-6xl md:text-9xl">Resultados.</h2>
             <div class="grid md:grid-cols-2 gap-20 leading-tight">
-                <p class="text-2xl md:text-4xl font-medium border-l-8 border-black pl-8">"Tripliqué mi facturación gracias al método que implementan. Un honor trabajar con Roque." <br><span class="text-sm font-bold uppercase tracking-widest text-zinc-400 mt-4 block">Jose Enrique Pomedio</span></p>
-                <p class="text-2xl md:text-4xl font-medium border-l-8 border-black pl-8">"Excelente profesional. Logramos automatizar todo el onboarding de alumnos, ahorrando horas." <br><span class="text-sm font-bold uppercase tracking-widest text-zinc-400 mt-4 block">Lidia Lorenzo</span></p>
+                <p class="text-2xl md:text-3xl font-medium border-l-4 border-black pl-8">"Tripliqué mi facturación gracias al método que implementan. Un honor trabajar con Roque y su equipo." <br><span class="text-sm font-bold uppercase tracking-widest text-zinc-400 mt-6 block">Jose Enrique Pomedio, Infoproductor</span></p>
+                <p class="text-2xl md:text-3xl font-medium border-l-4 border-black pl-8">"Excelente profesional. Logramos automatizar todo el onboarding de alumnos, ahorrándonos horas cada día." <br><span class="text-sm font-bold uppercase tracking-widest text-zinc-400 mt-6 block">Lidia Lorenzo, Marca Personal</span></p>
             </div>
         </div>
     </section>
 
-    <!-- CALENDARIO (GHL INTEGRADO CORRECTAMENTE) -->
-    <section id="agenda" class="py-32 px-4 bg-black text-center">
-        <h2 class="text-5xl font-black mb-12 uppercase italic">¿Agendamos?</h2>
-        <div class="max-w-5xl mx-auto bg-white rounded-[2.5rem] overflow-hidden p-2 shadow-2xl">
-            <!-- Tu código de GHL con un ajuste de altura para que se vea bien -->
-            <iframe src="https://links.10kcrm.com/widget/booking/cOyfdeMfOPqhMpnFbNrZ" style="width: 100%; border:none; overflow: hidden; min-height: 850px;" scrolling="no" id="calendar-vsl"></iframe>
-            <script src="https://links.10kcrm.com/js/form_embed.js" type="text/javascript"></script>
+    <!-- CALENDARIO FINAL -->
+    <section id="agenda" class="py-32 px-6 bg-black">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-7xl font-black uppercase italic leading-none mb-4">¿Sistematizamos?</h2>
+                <p class="text-zinc-600 uppercase tracking-[0.4em] text-[10px]">Elige el mejor momento para vuestro negocio</p>
+            </div>
+            <div class="bg-white rounded-[3rem] p-2 overflow-hidden shadow-2xl min-h-[850px]">
+                <iframe src="https://links.10kcrm.com/widget/booking/cOyfdeMfOPqhMpnFbNrZ" style="width: 100%; border:none; overflow: hidden; height: 850px;" scrolling="no"></iframe>
+                <script src="https://links.10kcrm.com/js/form_embed.js" type="text/javascript"></script>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center opacity-20 text-[10px] tracking-[1em] uppercase">
-        Roque — Systems & Strategy 2024
+    <footer class="py-20 text-center opacity-30 border-t border-zinc-900">
+        <p class="text-[10px] uppercase tracking-[1em]">Roque — Operations Strategist 2026</p>
     </footer>
 
 </body>
