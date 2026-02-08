@@ -3,114 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roque | Arquitectura Operativa para Infoproductores</title>
+    <title>Roque | Systems Architect for Info-brands</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .hero-title { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.85; font-weight: 900; letter-spacing: -0.05em; }
-        
-        /* Animación Video WOW */
-        .video-container { perspective: 1200px; }
-        .video-inner {
-            transform: rotateX(10deg) scale(0.95);
-            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,1);
-        }
-        .scrolled .video-inner { transform: rotateX(0deg) scale(1.05); }
-
-        /* Logos Premium (SVG Directo) */
-        .tool-wrapper { 
-            display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; 
-            opacity: 0.4; filter: grayscale(1); transition: all 0.5s ease;
-        }
-        .tool-wrapper:hover { opacity: 1; filter: grayscale(0); }
-        .svg-logo { height: 32px; width: auto; fill: currentColor; }
-
-        .bento-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 40px; border-radius: 32px; transition: 0.3s; }
-        .bento-card:hover { border-color: #444; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; }
+        .vsl-shadow { box-shadow: 0 0 50px rgba(255,255,255,0.1); }
+        .text-huge { font-size: clamp(2.5rem, 8vw, 6rem); line-height: 0.9; }
+        .logo-grid svg { height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; fill: white; }
+        .logo-grid svg:hover { opacity: 1; }
+        iframe { border-radius: 1.5rem; }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="antialiased overflow-x-hidden">
 
-    <!-- HEADER -->
-    <nav class="fixed w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
+    <!-- Navegación -->
+    <nav class="p-6 md:p-10 flex justify-between items-center fixed w-full z-50 mix-blend-difference">
         <div class="text-2xl font-black tracking-tighter uppercase italic">ROQUE.</div>
-        <a href="#agenda" class="bg-white text-black text-[10px] font-black px-6 py-3 rounded-full uppercase tracking-[0.3em] hover:scale-105 transition">Agendar Auditoría</a>
+        <a href="#agenda" class="bg-white text-black text-xs font-black px-6 py-3 rounded-full uppercase tracking-widest hover:scale-105 transition">Agendar ahora</a>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6">
-        <div class="text-center max-w-6xl mb-12">
-            <h1 class="hero-title uppercase">
-                SISTEMAS QUE <br> <span class="text-zinc-800 italic">ESCALAN MARCAS.</span>
-            </h1>
-            <p class="text-zinc-500 text-lg md:text-xl max-w-3xl mx-auto mt-10 leading-relaxed font-light">
-                Diseñamos la infraestructura operativa para <b>Infoproductores y Marcas Personales</b> que buscan facturar más con menos agobio.
-            </p>
+    <!-- HERO VSL SECTION -->
+    <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 text-center">
+        <h1 class="text-huge font-black tracking-tighter uppercase mb-6">
+            SISTEMAS QUE <br> <span class="text-zinc-700 italic">ESCALAN MARCAS.</span>
+        </h1>
+        <p class="text-zinc-500 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+            Sustituimos el agobio operativo por infraestructuras de alto rendimiento para Infoproductores.
+        </p>
+
+        <!-- CTA PRIMARIO -->
+        <div class="mb-16">
+            <a href="#agenda" class="bg-white text-black px-12 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-zinc-200 transition transform hover:scale-110 inline-block shadow-xl shadow-white/10">
+                Diseñar mi arquitectura operativa
+            </a>
         </div>
 
-        <!-- VIDEO DE AUTORIDAD -->
-        <div class="video-container w-full max-w-5xl mx-auto pb-40">
-            <div id="videoBox" class="video-inner aspect-video rounded-[2.5rem] overflow-hidden bg-zinc-900">
-                <iframe class="w-full h-full" src="https://www.youtube.com/embed/9S_9AInm46U?autoplay=1&mute=1&rel=0" frameborder="0" allowfullscreen></iframe>
+        <!-- VIDEO VSL (CORREGIDO) -->
+        <div class="w-full max-w-5xl mx-auto vsl-shadow rounded-[2rem] p-1 bg-zinc-800/50">
+            <div class="aspect-video w-full rounded-[1.5rem] overflow-hidden bg-black">
+                <!-- He puesto el ID de tu video de Youtube exacto -->
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/9S_9AInm46U?rel=0&modestbranding=1" title="VSL Roque" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: ECOSISTEMAS INTEGRADOS (LOGOS CORREGIDOS) -->
-    <section class="py-24 bg-zinc-950 border-y border-white/5">
+    <!-- LOGOS DE CONFIANZA (SVG GRANDES Y RECONOCIBLES) -->
+    <section class="py-24 bg-zinc-950/50 border-y border-white/5">
         <div class="max-w-6xl mx-auto px-6">
-            <p class="text-center text-[10px] uppercase tracking-[0.6em] text-zinc-600 mb-16 font-bold">Ecosistemas Integrados</p>
-            <div class="tool-wrapper">
-                <!-- Notion SVG -->
-                <svg class="svg-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.459 4.208c.739.074 1.256.185 2.105.333l11.908 2.071c.592.111.961.148 1.331.148.85 0 1.257-.333 1.257-1.11 0-.148-.037-.444-.074-.629L20.457 2.21c-.148-.739-.628-1.183-1.441-1.183-.333 0-.74.074-1.368.222L3.571 3.505c-.85.185-1.33.629-1.33 1.406 0 .37.074.74.221 1.258l1.627 5.62c.111.407.185.813.185 1.146 0 .777-.37 1.184-1.183 1.184-.11 0-.37 0-.591-.037l-.555-.074L3.83 22.852c.111.444.591.814 1.146.814.185 0 .443-.037.776-.111l14.935-2.589c.813-.148 1.146-.666 1.146-1.294 0-.37-.074-.74-.185-1.147l-1.923-6.841c-.11-.407-.184-.813-.184-1.146 0-.74.369-1.146 1.145-1.146.111 0 .407.037.592.074l.555.074L21.344 6.724c-.037-.111-.074-.259-.074-.37 0-.37.222-.592.555-.592.148 0 .258.037.406.111l.333.222.924-1.553c-.37-.296-.813-.444-1.294-.444-.666 0-1.11.37-1.33.924l-.149.37-14.862-2.589c-.591-.111-.85-.333-.85-.777 0-.259.074-.555.259-.85l.185-.296zM15.539 8.276l1.369 4.882c.111.443.185.813.185 1.183 0 .814-.518 1.295-1.331 1.295-.148 0-.481-.037-.629-.074l-4.438-.777c-.592-.111-.813-.37-.813-.813 0-.259.074-.518.185-.85l1.369-4.882c.147-.481.221-.85.221-1.184 0-.813-.517-1.294-1.33-1.294-.148 0-.481.037-.629.074l-4.438-.777c-.554-.111-.776-.333-.776-.777 0-.259.074-.555.222-.851l.148-.259 11.243 1.96c.555.11.777.333.777.777 0 .259-.074.555-.222.85l-.185.333z"/></svg>
-                
-                <!-- Make SVG -->
-                <svg class="svg-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 18.462a6.462 6.462 0 110-12.924 6.462 6.462 0 010 12.924z"/></svg>
-                
-                <!-- Zapier SVG -->
-                <svg class="svg-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.643 0H4.68c-.235 0-.45.138-.546.353L.027 9.535a.601.601 0 0 0 .546.845h6.636l-2.58 13.065c-.046.234.053.473.25.598a.6.6 0 0 0 .653-.023l13.79-10.42a.6.6 0 0 0-.107-1.077h-6.84l3.35-12.17a.6.6 0 0 0-.546-.353z"/></svg>
-                
-                <!-- Airtable SVG -->
-                <svg class="svg-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.247 16.366l9.167 4.912c.365.195.795.195 1.159 0l9.167-4.912c.365-.195.591-.57.591-.976V5.41c0-.406-.226-.78-.591-.976l-9.167-4.912c-.365-.195-.795-.195-1.159 0L2.247 4.434c-.365.195-.591.57-.591.976v9.98c0 .406.226.781.591.976z"/></svg>
-
-                <span class="text-xl font-black tracking-tighter">GHL</span>
-
-                <!-- WhatsApp SVG -->
-                <svg class="svg-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72 1.025 3.559 1.512 5.448 1.515h.006c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <p class="text-center text-[10px] uppercase tracking-[0.5em] text-zinc-600 mb-12 font-bold font-serif italic text-sm">Tu negocio sobre herramientas de élite</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 grayscale opacity-50">
+                <div class="flex flex-col items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" class="h-10 w-auto invert" alt="Notion">
+                    <span class="text-[10px] font-bold tracking-widest">NOTION</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <img src="https://www.make.com/en/static/images/logos/make-logo.svg" class="h-8 w-auto invert" alt="Make">
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Make</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-2xl font-black tracking-tighter">GHL</span>
+                    <span class="text-[10px] font-bold tracking-widest">CRM</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Airtable_Logo.svg" class="h-8 w-auto invert" alt="Airtable">
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Airtable</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: IMPACTO (BENEFICIOS) -->
-    <section class="py-32 px-6 bg-black">
-        <div class="max-w-7xl mx-auto">
-            <p class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-700 mb-6">Impacto Real</p>
-            <h2 class="text-5xl md:text-7xl font-black mb-20 tracking-tighter uppercase italic leading-none">
-                Vuestro negocio <br> <span class="text-zinc-500">como un reloj.</span>
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bento-card">
-                    <h3 class="text-2xl font-bold mb-4 uppercase">Métricas en Control</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">
-                        Instalamos cuadros de mando en tiempo real. Sabréis vuestro CAC, ROAS y facturación neta cada segundo, sin abrir un solo Excel.
-                    </p>
-                </div>
-                <div class="bento-card border-zinc-600">
-                    <h3 class="text-2xl font-bold mb-4 uppercase">Eliminación del Agobio</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">
-                        Sistematizamos lo repetitivo. Liberamos más de 15 horas semanales de vuestra agenda para que volváis a centraros en vuestra comunidad.
-                    </p>
-                </div>
-                <div class="bento-card">
-                    <h3 class="text-2xl font-bold mb-4 uppercase">Delegación Absoluta</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">
-                        Diseñamos procesos que permiten que vuestro equipo funcione solo. Contratar, formar y escalar dejará de ser una pesadilla.
-                    </p>
-                </div>
+    <!-- BENEFICIOS DE NEGOCIO -->
+    <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="border-t border-zinc-800 pt-8">
+                <span class="text-zinc-600 font-bold text-xs uppercase tracking-widest">01. Métricas</span>
+                <h3 class="text-3xl font-black mt-4 mb-4 uppercase">Control total</h3>
+                <p class="text-zinc-500 leading-relaxed">Dashboards en tiempo real. Sabrás tu CAC, ROAS y LTV al segundo. Deja de adivinar.</p>
+            </div>
+            <div class="border-t border-zinc-800 pt-8">
+                <span class="text-zinc-600 font-bold text-xs uppercase tracking-widest">02. Tiempo</span>
+                <h3 class="text-3xl font-black mt-4 mb-4 uppercase">Libertad Real</h3>
+                <p class="text-zinc-500 leading-relaxed">Liberamos +15h semanales de tareas manuales. Tu equipo trabaja para el sistema, no tú para ellos.</p>
+            </div>
+            <div class="border-t border-zinc-800 pt-8">
+                <span class="text-zinc-600 font-bold text-xs uppercase tracking-widest">03. Escalado</span>
+                <h3 class="text-3xl font-black mt-4 mb-4 uppercase">Delegación</h3>
+                <p class="text-zinc-500 leading-relaxed">Sistemas que permiten contratar y formar sin fricción. Tu negocio se vuelve una máquina vendible.</p>
             </div>
         </div>
     </section>
@@ -118,42 +97,27 @@
     <!-- TESTIMONIOS -->
     <section class="py-32 bg-white text-black px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl md:text-8xl font-black mb-20 tracking-tighter italic uppercase">Ellos ya <br> tienen orden.</h2>
-            <div class="grid md:grid-cols-2 gap-20">
-                <div class="space-y-6 border-l-4 border-black pl-8">
-                    <p class="text-2xl font-medium">"Tripliqué mi facturación gracias al método que implementan. Un honor trabajar con Roque."</p>
-                    <p class="font-bold text-xs uppercase tracking-widest">— Jose Enrique P., Infoproductor</p>
-                </div>
-                <div class="space-y-6 border-l-4 border-black pl-8">
-                    <p class="text-2xl font-medium">"Logramos automatizar todo el onboarding de alumnos, ahorrándonos horas cada día."</p>
-                    <p class="font-bold text-xs uppercase tracking-widest">— Lidia Lorenzo, Marca Personal</p>
-                </div>
+            <h2 class="text-huge font-black tracking-tighter uppercase italic mb-20 text-center">Resultados.</h2>
+            <div class="grid md:grid-cols-2 gap-20 leading-tight">
+                <p class="text-2xl md:text-4xl font-medium border-l-8 border-black pl-8">"Tripliqué mi facturación gracias al método que implementan. Un honor trabajar con Roque." <br><span class="text-sm font-bold uppercase tracking-widest text-zinc-400 mt-4 block">Jose Enrique Pomedio</span></p>
+                <p class="text-2xl md:text-4xl font-medium border-l-8 border-black pl-8">"Excelente profesional. Logramos automatizar todo el onboarding de alumnos, ahorrando horas." <br><span class="text-sm font-bold uppercase tracking-widest text-zinc-400 mt-4 block">Lidia Lorenzo</span></p>
             </div>
         </div>
     </section>
 
-    <!-- CALENDARIO GHL -->
-    <section id="agenda" class="py-32 px-6 bg-black">
-        <div class="max-w-4xl mx-auto text-center mb-16">
-            <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase italic">¿Agendamos?</h2>
-            <p class="text-zinc-500 uppercase tracking-[0.4em] text-[10px]">Auditoría de 15 min de vuestra infraestructura</p>
-        </div>
-        
-        <div class="max-w-4xl mx-auto bg-white rounded-[3rem] p-4 shadow-2xl min-h-[800px]">
-            <iframe src="https://links.10kcrm.com/widget/booking/cOyfdeMfOPqhMpnFbNrZ" style="width: 100%; border:none; overflow: hidden; height: 800px;" scrolling="no"></iframe>
+    <!-- CALENDARIO (GHL INTEGRADO CORRECTAMENTE) -->
+    <section id="agenda" class="py-32 px-4 bg-black text-center">
+        <h2 class="text-5xl font-black mb-12 uppercase italic">¿Agendamos?</h2>
+        <div class="max-w-5xl mx-auto bg-white rounded-[2.5rem] overflow-hidden p-2 shadow-2xl">
+            <!-- Tu código de GHL con un ajuste de altura para que se vea bien -->
+            <iframe src="https://links.10kcrm.com/widget/booking/cOyfdeMfOPqhMpnFbNrZ" style="width: 100%; border:none; overflow: hidden; min-height: 850px;" scrolling="no" id="calendar-vsl"></iframe>
             <script src="https://links.10kcrm.com/js/form_embed.js" type="text/javascript"></script>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-zinc-900 opacity-30">
-        <p class="text-[10px] uppercase tracking-[1em]">Roque — Systems & Operations 2024</p>
+    <footer class="py-12 text-center opacity-20 text-[10px] tracking-[1em] uppercase">
+        Roque — Systems & Strategy 2024
     </footer>
 
-    <script>
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 150) document.body.classList.add('scrolled');
-            else document.body.classList.remove('scrolled');
-        });
-    </script>
 </body>
 </html>
