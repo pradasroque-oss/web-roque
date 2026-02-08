@@ -3,163 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roque | Systems Architect</title>
+    <title>Roque | Arquitectura Operativa para Infoproductores</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; }
-        .serif { font-family: 'Playfair Display', serif; }
-        .btn-premium { 
-            background: white; color: black; padding: 16px 32px; border-radius: 100px; 
-            font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
-            transition: all 0.3s ease; display: inline-block;
-        }
-        .btn-premium:hover { transform: scale(1.05); background: #f0f0f0; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .hero-title { font-size: clamp(3rem, 8vw, 7rem); line-height: 0.9; font-weight: 900; letter-spacing: -0.05em; }
+        .glass-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 40px; border-radius: 24px; }
         
-        /* Contenedor de video estilo "Apple" */
-        .video-wrapper {
-            perspective: 1500px;
-            padding: 40px 0;
+        /* Animación Video */
+        .video-container {
+            perspective: 1000px;
+            transition: all 0.6s ease;
         }
-        .video-inner {
-            transform: rotateX(10deg);
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(255,255,255,0.1);
+        .video-frame {
+            transform: rotateX(10deg) scale(0.95);
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             box-shadow: 0 50px 100px -20px rgba(0,0,0,1);
         }
-        .scrolled .video-inner { transform: rotateX(0deg) scale(1.05); }
+        .scrolled .video-frame { transform: rotateX(0deg) scale(1.02); }
 
-        /* Tarjetas de Beneficios con contraste */
-        .bento-card {
-            background: #111;
-            border: 1px solid #222;
-            padding: 40px;
-            border-radius: 32px;
-            transition: all 0.4s ease;
-        }
-        .bento-card:hover { border-color: #fff; background: #161616; }
-
-        .section-label { font-size: 10px; font-weight: 900; letter-spacing: 0.5em; color: #555; text-transform: uppercase; }
+        /* Logos */
+        .tool-logo { height: 40px; filter: brightness(0) invert(1); opacity: 0.5; transition: opacity 0.3s; }
+        .tool-logo:hover { opacity: 1; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- HEADER -->
+    <!-- Navegación -->
     <nav class="fixed w-full z-50 p-6 flex justify-between items-center mix-blend-difference">
-        <div class="text-2xl font-black tracking-tighter uppercase italic">ROQUE.</div>
-        <a href="#agenda" class="bg-white text-black text-[10px] font-black px-6 py-3 rounded-full uppercase tracking-widest hover:scale-105 transition">Agendar Auditoría</a>
+        <div class="flex items-center gap-2">
+            <span class="text-xl font-black tracking-tighter uppercase italic">Roque.</span>
+        </div>
+        <a href="#agenda" class="bg-white text-black text-[10px] font-bold px-6 py-3 rounded-full uppercase tracking-widest hover:scale-105 transition">Agendar Auditoría</a>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 bg-gradient-to-b from-zinc-900 to-black">
-        <div class="text-center max-w-5xl mb-12">
-            <h1 class="text-6xl md:text-[130px] font-black leading-[0.85] tracking-tighter mb-8">
-                SISTEMAS <br> <span class="opacity-30 italic serif font-light">Estratégicos.</span>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 bg-[radial-gradient(circle_at_top,_#111_0%,_#000_70%)]">
+        <div class="text-center max-w-5xl mb-16">
+            <h1 class="hero-title uppercase mb-8">
+                SISTEMAS <br> <span class="text-zinc-600 italic">Estratégicos.</span>
             </h1>
-            <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-                Diseño e implemento la infraestructura que permite a marcas de alto nivel escalar sin fricción operativa.
+            <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                Diseñamos e implementamos la infraestructura operativa que permite a <b>Infoproductores y Marcas Personales</b> escalar sin caos, agobio ni cuellos de botella.
             </p>
-            <a href="#agenda" class="btn-premium">Diseñar mi sistema</a>
+            <a href="#agenda" class="bg-white text-black px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:invert transition">Diseñar nuestro sistema</a>
         </div>
 
-        <!-- VIDEO PRESENTACIÓN -->
-        <div class="video-wrapper w-full max-w-5xl mx-auto">
-            <div id="videoContainer" class="video-inner aspect-video rounded-3xl overflow-hidden bg-zinc-900">
+        <!-- Video Wrapper -->
+        <div class="video-container w-full max-w-5xl mx-auto pb-20">
+            <div id="videoFrame" class="video-frame aspect-video rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900">
                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: BENEFICIOS (Diferenciador) -->
+    <!-- Sección de Impacto (Beneficios Reales) -->
     <section class="py-32 px-6 bg-black">
         <div class="max-w-7xl mx-auto">
-            <p class="section-label mb-4">El ROI de la eficiencia</p>
-            <h2 class="text-4xl md:text-6xl font-black mb-16 tracking-tighter">¿Por qué <span class="opacity-40 italic">ahora?</span></h2>
+            <p class="text-[10px] uppercase tracking-[0.5em] text-zinc-600 mb-4 font-bold">Arquitectura de Negocio</p>
+            <h2 class="text-5xl md:text-7xl font-black mb-20 tracking-tighter italic">Del caos a la <span class="text-zinc-600">rentabilidad.</span></h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bento-card">
-                    <div class="text-white mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
-                    <h3 class="text-xl font-bold mb-4">Escalabilidad Sin Techo</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Pasar de 10 a 100 clientes no debería multiplicar tu trabajo, solo tus beneficios. Creamos procesos que aguantan el crecimiento.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Beneficio 1 -->
+                <div class="glass-card">
+                    <div class="text-white mb-8">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20v-8m0 0V4m0 8h8m-8 0H4"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Control total de Métricas</h3>
+                    <p class="text-zinc-500 leading-relaxed">Instalamos el cerebro de tu negocio. Visualiza cada euro invertido y cada lead generado en tiempo real. Deja de adivinar y empieza a dirigir.</p>
                 </div>
-                <div class="bento-card border-zinc-700">
-                    <div class="text-white mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
-                    <h3 class="text-xl font-bold mb-4">Control de Datos</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Centralizamos tu información en un solo cerebro operativo (Notion/Airtable). Lo que no se mide, no se puede mejorar.</p>
+                <!-- Beneficio 2 -->
+                <div class="glass-card border-zinc-700">
+                    <div class="text-white mb-8">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Adiós al Agobio Operativo</h3>
+                    <p class="text-zinc-500 leading-relaxed">Liberamos más de 15 horas semanales de tareas manuales. Recupera el enfoque en lo que de verdad importa: tu estrategia y tu comunidad.</p>
                 </div>
-                <div class="bento-card">
-                    <div class="text-white mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="M2 12h20"/><path d="m19.07 4.93-14.14 14.14"/></svg></div>
-                    <h3 class="text-xl font-bold mb-4">Arquitectura GHL</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Implementamos GoHighLevel no como un simple CRM, sino como el motor de captación y ventas automático de tu empresa.</p>
+                <!-- Beneficio 3 -->
+                <div class="glass-card">
+                    <div class="text-white mb-8">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2m16-10a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Delegación Efectiva</h3>
+                    <p class="text-zinc-500 leading-relaxed">Creamos sistemas que permiten contratar y delegar sin miedo. Tu equipo sabrá qué hacer y cómo hacerlo sin que tú estés presente.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: TECH STACK (Claridad técnica) -->
+    <!-- Tech Stack con Logos Reales -->
     <section class="py-24 bg-zinc-950 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-12 md:gap-24 opacity-30 font-black tracking-widest text-lg">
-            <span>MAKE</span>
-            <span>GHL</span>
-            <span>NOTION</span>
-            <span>AIRTABLE</span>
-            <span>ZAPIER</span>
-            <span>WHATSAPP API</span>
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-[10px] uppercase tracking-[0.5em] text-zinc-600 mb-16">Ecosistemas Integrados</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Notion-logo.svg" alt="Notion" class="tool-logo">
+                <img src="https://www.make.com/en/static/images/logos/make-logo.svg" alt="Make" class="tool-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Zapier_logo.svg" alt="Zapier" class="tool-logo">
+                <img src="https://www.airtable.com/images/favicon/apple-touch-icon.png" alt="Airtable" class="tool-logo h-8">
+                <span class="text-xl font-black opacity-50 tracking-tighter">GHL</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp API" class="tool-logo">
+            </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: TESTIMONIOS (Confianza Real) -->
+    <!-- Testimonios -->
     <section class="py-32 bg-white text-black">
-        <div class="max-w-5xl mx-auto px-6">
-            <p class="section-label mb-4 !text-zinc-400">Resultados validados</p>
-            <h2 class="text-5xl md:text-7xl font-black mb-20 tracking-tighter italic uppercase">Ellos ya <br> tienen el sistema.</h2>
-            
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-5xl md:text-8xl font-black mb-20 tracking-tighter italic uppercase">Ellos ya <br> escalan con orden.</h2>
             <div class="grid md:grid-cols-2 gap-20">
                 <div class="space-y-6">
-                    <p class="text-2xl font-light leading-relaxed">"Roque no es un técnico, es un estratega. Nos dio la estructura para triplicar la facturación sin contratar más personal."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-black rounded-full"></div>
-                        <div>
-                            <p class="font-bold">Jose Enrique Pomedio</p>
-                            <p class="text-xs text-zinc-500 uppercase tracking-widest">Director General</p>
-                        </div>
-                    </div>
+                    <p class="text-2xl font-medium leading-tight">"Pasamos de un caos de mensajes y Excels a un sistema donde cada lead está bajo control. La claridad mental no tiene precio."</p>
+                    <p class="font-bold uppercase tracking-widest text-sm">— Jose Enrique Pomedio, Infoproductor</p>
                 </div>
                 <div class="space-y-6">
-                    <p class="text-2xl font-light leading-relaxed">"Excelente profesional. Muy satisfecha con el trabajo realizado, logramos todos los objetivos planteados."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-black rounded-full"></div>
-                        <div>
-                            <p class="font-bold">Lidia Lorenzo</p>
-                            <p class="text-xs text-zinc-500 uppercase tracking-widest">CEO</p>
-                        </div>
-                    </div>
+                    <p class="text-2xl font-medium leading-tight">"Excelente profesional. Logramos automatizar todo el proceso de onboarding de mis alumnos, ahorrándonos horas cada día."</p>
+                    <p class="font-bold uppercase tracking-widest text-sm">— Lidia Lorenzo, Marca Personal</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: AGENDA -->
-    <section id="agenda" class="py-32 px-6 bg-black">
+    <!-- Calendario GHL Final -->
+    <section id="agenda" class="py-32 bg-black px-6">
         <div class="max-w-4xl mx-auto text-center mb-16">
-            <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-8 italic uppercase">Hablemos.</h2>
-            <p class="text-zinc-500 max-w-lg mx-auto mb-12">Si buscas un implementador que entienda tu negocio, reserva una sesión estratégica de 15 minutos.</p>
+            <h2 class="text-5xl font-black tracking-tighter mb-4 italic uppercase leading-none">Diseñemos vuestra arquitectura.</h2>
+            <p class="text-zinc-500 uppercase tracking-[0.3em] text-[10px]">Reserva de 15 minutos para diagnóstico operativo</p>
         </div>
         
-        <div class="max-w-4xl mx-auto rounded-[2rem] overflow-hidden border border-zinc-800 bg-white shadow-[0_0_100px_rgba(255,255,255,0.05)]">
-            <iframe src="https://links.10kcrm.com/widget/booking/cOyfdeMfOPqhMpnFbNrZ" style="width: 100%; height: 750px; border:none; overflow: hidden;" scrolling="no"></iframe>
+        <!-- Contenedor Calendario Reparado -->
+        <div class="max-w-4xl mx-auto bg-white rounded-[2.5rem] p-2 overflow-hidden shadow-[0_0_100px_rgba(255,255,255,0.05)]">
+            <iframe 
+                src="https://links.10kcrm.com/widget/booking/cOyfdeMfOPqhMpnFbNrZ" 
+                style="width: 100%; border:none; overflow: hidden; min-height: 750px;" 
+                scrolling="no" 
+                id="1oZvlxxUsOHSs29nDW5d_1770578861950">
+            </iframe>
+            <script src="https://links.10kcrm.com/js/form_embed.js" type="text/javascript"></script>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-white/5 opacity-20">
+    <footer class="py-20 text-center opacity-30">
         <p class="text-[10px] uppercase tracking-[1em]">Roque — Systems Architect 2024</p>
     </footer>
 
     <script>
         window.addEventListener('scroll', () => {
-            const video = document.getElementById('videoContainer');
-            const scrolled = window.scrollY;
-            if (scrolled > 100) {
+            const frame = document.getElementById('videoFrame');
+            if (window.scrollY > 100) {
                 document.body.classList.add('scrolled');
             } else {
                 document.body.classList.remove('scrolled');
