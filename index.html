@@ -5,85 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roque | Systems Architect & Strategy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .perspective { perspective: 2000px; }
-        .video-container { 
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Animación suave de entrada */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Contenedor de Video con Perspectiva Mejorada */
+        .video-wrapper {
+            perspective: 2000px;
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             transform: rotateX(15deg) scale(0.9);
-            transition: transform 0.5s ease-out;
             box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
         }
-        .scrolled .video-container { transform: rotateX(0deg) scale(1); }
+        .scrolled .video-wrapper {
+            transform: rotateX(0deg) scale(1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(180deg, #fff 0%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <nav class="fixed w-full z-50 p-8 flex justify-between items-center mix-blend-difference">
-        <span class="text-xl font-black tracking-tighter uppercase">Roque.</span>
-        <a href="#agenda" class="text-[10px] uppercase tracking-[0.4em] border-b border-white pb-1">Agendar Sesión</a>
+    <!-- Header Fijo -->
+    <nav class="fixed w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
+        <span class="text-xl font-black tracking-tighter uppercase tracking-[0.2em]">Roque.</span>
+        <a href="#agenda" class="text-[10px] font-bold uppercase tracking-[0.4em] bg-white text-black px-6 py-3 rounded-full hover:bg-zinc-200 transition">Agendar Sesión</a>
     </nav>
 
-    <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6">
-        <div class="text-center mb-16 max-w-5xl">
-            <h1 class="text-5xl md:text-[120px] font-black leading-none tracking-tighter mb-8 uppercase">
-                Sistemas <br> <span class="text-zinc-600">Estratégicos.</span>
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex flex-col items-center justify-center pt-40 px-6">
+        <div class="text-center max-w-4xl mb-16">
+            <h1 class="text-6xl md:text-[110px] font-black leading-[0.9] tracking-tighter mb-8 gradient-text uppercase">
+                Sistemas <br> <span class="serif italic font-light lowercase opacity-70">estratégicos.</span>
             </h1>
-            <p class="text-zinc-500 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-                Implementación de infraestructura de alto nivel para marcas que buscan pasar del caos operativo a la eficiencia absoluta.
+            <p class="text-zinc-500 text-lg md:text-xl max-w-xl mx-auto font-light leading-relaxed">
+                Diseño la infraestructura invisible que permite a marcas y empresas escalar sin fricción operativa.
             </p>
-            <div class="mt-12">
-                <a href="#agenda" class="bg-white text-black px-12 py-5 rounded-full font-bold text-sm tracking-widest hover:bg-zinc-200 transition transform hover:scale-105 inline-block">
-                    EMPEZAR AHORA
-                </a>
-            </div>
         </div>
 
-        <div class="perspective w-full max-w-6xl mx-auto pb-32">
-            <div id="videoBox" class="video-container aspect-video bg-zinc-900 rounded-[40px] border-[8px] border-zinc-800 overflow-hidden relative">
-                <!-- REEMPLAZA TU_ID CON TU VIDEO DE YOUTUBE -->
-                <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- El Video con Efecto WOW -->
+        <div class="w-full max-w-6xl mx-auto pb-40">
+            <div id="videoCard" class="video-wrapper aspect-video bg-zinc-900 rounded-3xl border border-zinc-800 overflow-hidden shadow-2xl">
+                <!-- VIDEO DE PRESENTACIÓN (Placeholder) -->
+                <iframe 
+                    class="w-full h-full" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
 
+    <!-- SECCIÓN DE VALOR (Blanco) -->
     <section class="py-32 bg-white text-black px-6">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div class="space-y-8">
-                <h2 class="text-5xl font-black tracking-tighter uppercase">Tu negocio <br> <span class="text-zinc-400">como un reloj.</span></h2>
-                <p class="text-zinc-600 text-lg leading-relaxed">
-                    No instalamos software, diseñamos engranajes. Centralizamos tu operativa en <strong>Notion</strong>, automatizamos con <strong>Make</strong> y escalamos tus ventas en <strong>GHL</strong>.
+            <div class="reveal">
+                <h2 class="text-5xl font-black tracking-tighter uppercase mb-6 leading-none">Tu negocio <br> <span class="text-zinc-400">como un reloj.</span></h2>
+                <p class="text-zinc-600 text-lg leading-relaxed mb-8">
+                    No solo configuro herramientas; diseño sistemas. Centralizo tu operativa en <strong>Notion</strong>, automatizo flujos con <strong>Make</strong> y optimizo tu conversión en <strong>GHL</strong>.
                 </p>
+                <div class="flex gap-4">
+                    <div class="h-[1px] w-12 bg-black self-center"></div>
+                    <span class="text-xs font-bold uppercase tracking-widest">Implementador & Estratega</span>
+                </div>
             </div>
-            <div class="rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070" class="grayscale hover:grayscale-0 transition duration-700">
+            <div class="reveal rounded-2xl overflow-hidden shadow-2xl border border-zinc-100">
+                <!-- Imagen de Stock de Alta Calidad -->
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000" alt="Sistemas" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
+    <!-- CALENDARIO GHL -->
     <section id="agenda" class="py-32 px-6 bg-black">
-        <div class="max-w-4xl mx-auto text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 uppercase leading-none">Diseñemos <br> tu arquitectura.</h2>
-            <p class="text-zinc-500 uppercase tracking-[0.3em] text-[10px]">Reserva tu sesión estratégica de 15 min</p>
+        <div class="max-w-4xl mx-auto text-center mb-16 reveal">
+            <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase">¿Hablamos?</h2>
+            <p class="text-zinc-500 uppercase tracking-[0.4em] text-[10px]">Reserva tu sesión estratégica de 15 min</p>
         </div>
-        <div class="max-w-4xl mx-auto rounded-[2rem] overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl">
-            <iframe src="https://links.10kcrm.com/widget/booking/cOyfdeMfOPqhMpnFbNrZ" style="width:100%;height:700px;border:none;" scrolling="no"></iframe>
+        
+        <div class="max-w-4xl mx-auto rounded-[2.5rem] overflow-hidden border border-zinc-800 bg-zinc-900 shadow-3xl reveal">
+            <iframe 
+                src="https://links.10kcrm.com/widget/booking/cOyfdeMfOPqhMpnFbNrZ" 
+                style="width:100%; height:750px; border:none;" 
+                scrolling="no">
+            </iframe>
         </div>
     </section>
 
     <footer class="py-20 text-center border-t border-zinc-900">
-        <p class="text-[10px] text-zinc-700 tracking-[0.8em] uppercase italic text-white">Roque Pradas — Systems Architect 2024</p>
+        <p class="text-[10px] text-zinc-700 tracking-[0.8em] uppercase italic">Roque Pradas — Systems Architect 2024</p>
     </footer>
 
     <script>
+        // Animación de scroll para el video
         window.addEventListener('scroll', () => {
-            const body = document.body;
-            if (window.scrollY > 150) {
-                body.classList.add('scrolled');
+            if (window.scrollY > 100) {
+                document.body.classList.add('scrolled');
             } else {
-                body.classList.remove('scrolled');
+                document.body.classList.remove('scrolled');
             }
+            
+            // Revelar elementos al hacer scroll
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
         });
+        
+        // Ejecutar una vez al cargar
+        window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
 </html>
